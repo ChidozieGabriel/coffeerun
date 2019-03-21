@@ -25,8 +25,10 @@
 				console.log(item.name + ' is ' + item.value);
 			})
 			console.log(data);
-			fn(data);
-			this.reset();
+			fn(data)
+			.then(function () {
+				this.reset();
+			})
 		});
 
 		this.$formElement.on('reset', function () {
